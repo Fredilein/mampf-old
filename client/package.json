@@ -10,10 +10,13 @@
   "dependencies": {
     "@tailwindcss/postcss7-compat": "^2.2.17",
     "autoprefixer": "^9",
+    "axios": "^0.24.0",
     "core-js": "^3.6.5",
     "postcss": "^7",
+    "sweetalert": "^2.1.2",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
     "vue": "^2.6.11",
+    "vue-jwt-decode": "^0.1.0",
     "vue-router": "^3.2.0"
   },
   "devDependencies": {

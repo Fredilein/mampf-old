@@ -1,18 +1,40 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <h1>This is the home page</h1>
+    <div v-if="user && user.name">
+      <p>Name: {{ user.name }}</p>
+      <p>Email: {{ user.email }}</p>
+    </div>
+    <div v-else>
+      <p>Not logged in</p>
+    </div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import VueJwtDecode from "vue-jwt-decode";
 
 export default {
-  name: "Home",
-  components: {
-    HelloWorld,
+  data() {
+    return {
+      user: {}
+    };
   },
+  methods: {
+    getUserDetails() {
+      let token = localStorage.getItem("jwt");
+      let decoded = VueJwtDecode.decode(token);
+      this.user = decoded;
+    },
+    logUserOut() {
+      localStorage.removeItem("jwt");
+      this.$router.push("/");
+    }
+  },
+  created() {
+    this.getUserDetails();
+  }
 };
 </script>
+
+<style scoped></style>
