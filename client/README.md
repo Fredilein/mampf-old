@@ -1,29 +1,27 @@
-# client
+# Client
 
-## Project setup
-```
-yarn install
-```
+## Installation
 
-### Compiles and hot-reloads for development
+### Prerequisites
+**Vue CLI**
 ```
-yarn run serve
+$ npm install -g @vue/cli
 ```
 
-### Compiles and minifies for production
+### Mampf Installation
 ```
-yarn run build
-```
-
-### Run your tests
-```
-yarn run test
+npm install
 ```
 
-### Lints and fixes files
+### Run Mampf Client
 ```
-yarn run lint
+npm run serve
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Technologies
+- **Vue JS**
+  - [Website](https://vuejs.org)
+  - Best JavaScript Framework lol, easy to use
+- **Tailwind CSS**
+  - [Docs](https://tailwindui.com/documentation)
+  - For styling

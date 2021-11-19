@@ -1,49 +1,41 @@
 <template>
-  <div class="container mx-auto">
-    <div class="row">
-      <div class="col-lg-6 offset-lg-3 col-sm-10 offset-sm-1">
-        <form
-          class="p-5 text-center border border-primary"
-          style="margin-top:70px;height:auto;padding-top:100px !important;"
-          @submit.prevent="registerUser"
-        >
-          <input
-            type="text"
-            id="name"
-            class="mb-5 form-control"
-            placeholder="Name"
-            v-model="register.name"
-            required
-          />
-          <input
-            type="email"
-            id="email"
-            class="mb-5 form-control"
-            placeholder="Email"
-            v-model="register.email"
-            required
-          />
-          <!-- Password -->
-          <input
-            type="password"
-            id="password"
-            class="mb-5 form-control"
-            placeholder="Password"
-            v-model="register.password"
-          />
-          <p>
-            Already have an account??<router-link to="/"
-              >click here</router-link
-            >
-            <!-- Sign in button -->
-            <center>
-              <button class="my-4 btn btn-primary btn-block w-75" type="submit">
-                Sign in
-              </button>
-            </center>
-          </p>
-        </form>
+  <div class="flex items-center justify-center min-h-full px-4 py-12 sm:px-6 lg:px-8">
+    <div class="w-full max-w-md space-y-8">
+      <div>
+        <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900">
+          Create an account
+        </h2>
+        <p class="mt-2 text-sm text-center text-gray-600">
+          Already have an account?
+          <router-link to="/login" class="font-medium text-indigo-600 hover:text-indigo-500">
+            Log in
+          </router-link>
+        </p>
       </div>
+
+      <form
+        class="mt-8 space-y-4"
+        @submit.prevent="registerUser"
+      >
+        <div>
+          <label for="name" class="sr-only">Email address</label>
+          <input id="name" name="name" type="text" autocomplete="username" required class="inp-account" placeholder="Username" v-model="register.name">
+        </div>
+        <div>
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" autocomplete="email" required class="inp-account" placeholder="Email address" v-model="register.email">
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required class="inp-account" placeholder="Password" v-model="register.password">
+        </div>
+        <div>
+          <button type="submit" class="btn-account">
+            Register
+          </button>
+        </div>
+      </form>
+
     </div>
   </div>
 </template>

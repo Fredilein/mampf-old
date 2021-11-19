@@ -5,10 +5,16 @@
         <h2 class="mt-6 text-3xl font-extrabold text-center text-gray-900">
           Sign in to your account
         </h2>
+        <p class="mt-2 text-sm text-center text-gray-600">
+          New here?
+          <router-link to="/register" class="font-medium text-indigo-600 hover:text-indigo-500">
+            Create an account
+          </router-link>
+        </p>
       </div>
 
       <form
-        class="mt-8 space-y-6"
+        class="mt-8 space-y-4"
         @submit.prevent="loginUser"
       >
         <div>
@@ -19,13 +25,8 @@
           <label for="password" class="sr-only">Password</label>
           <input id="password" name="password" type="password" autocomplete="current-password" required class="inp-account" placeholder="Password" v-model="login.password">
         </div>
-        <p>
-          Dont have an account??<router-link to="/register"
-            >click here</router-link
-          >
-        </p>
         <div>
-          <button type="submit" class="relative flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent shadow group rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 focus:shadow-md hover:shadow-md">
+          <button type="submit" class="btn-account">
             Sign in
           </button>
         </div>

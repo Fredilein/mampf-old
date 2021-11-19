@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <navbar />
     <h1>This is the home page</h1>
     <div v-if="user && user.name">
       <p>Name: {{ user.name }}</p>
@@ -13,12 +14,16 @@
 
 <script>
 import VueJwtDecode from "vue-jwt-decode";
+import navbar from "../components/Nav.vue";
 
 export default {
   data() {
     return {
       user: {}
     };
+  },
+  components: {
+    navbar
   },
   methods: {
     getUserDetails() {
